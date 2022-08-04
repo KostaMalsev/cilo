@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-const db = require('./queries')
+const db = require('./db.js')
 
 const port = 3000
 
