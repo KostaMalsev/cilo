@@ -6,8 +6,8 @@ const bodyParser = require('body-parser')
 
 const dbLib = require('./db.js')
 
-import {routeGraph} from 'routeGraph.js'
-import {routeRest} from 'routeRest.js'
+routeGraph =  require('routeGraph.js')
+routeRest =  require('routeRest.js')
 
 let auth = {
   user: 'me',
@@ -24,9 +24,11 @@ const db = new dbLib(auth);
 const restPort = 3000;
 const graphPort = 3001;
 
-let rest = routeAPI(restPort);
+let rest = routeRest(restPort);
 
-let graph = routeAPI(graphPort);
+let graph = routeGraph(graphPort);
+
+
 
 /*
 restApp.use(bodyParser.json())
