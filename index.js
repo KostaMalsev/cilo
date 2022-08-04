@@ -22,6 +22,10 @@ const db = new dbLib(auth);
 const restPort = 3000;
 const graphPort = 3001;
 
+let rest = routeAPI(restPort);
+
+let graph = routeAPI(graphPort);
+
 /*
 restApp.use(bodyParser.json())
 
