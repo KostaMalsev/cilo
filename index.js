@@ -4,10 +4,6 @@ const express = require('express')
 
 const bodyParser = require('body-parser')
 
-const restApp = express();
-
-const graphApp = express();
-
 const dbLib = require('./db.js')
 
 
@@ -43,16 +39,5 @@ restApp.get('/', (request, response) => {
 restApp.get('/users', db.getUsers)
 
 
-var restServer = require('https').createServer(options, restApp);
-
-restServer.listen(port, function() {
-    logger.writeLog('Listening on port ' + restPort);
-});
-
-var graphServer = require('https').createServer(options, graphApp);
-
-graphServer.listen(admin_port, function() {
-    logger.writeLog('Listening on graph port ' + graphPort);
-});
 
 
