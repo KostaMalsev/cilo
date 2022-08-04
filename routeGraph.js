@@ -4,7 +4,7 @@ const {routeAPI} = import 'routeAPI.js'
 //additional imports
 
 
-class routeGraph {
+export class routeGraph {
 
   constructor(port) {
     super();
