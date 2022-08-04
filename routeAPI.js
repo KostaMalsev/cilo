@@ -7,8 +7,11 @@ const bodyParser = require('body-parser')
 export class routeAPI {
 
   constructor(port) {
+    
     this.app = new express();
+    
     let options = {};
+    
     this.server = require('https').createServer(options, app);
 
     this.app.use(bodyParser.json())
