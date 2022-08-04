@@ -28,9 +28,9 @@ rest.get()
 
 graph.get();
 
-rest.getUsers(db);
+rest.getUsers(db.getUsers);
 
-graph.getUsers(db);
+graph.getUsers(db.getUsers);
 
 
 /*
