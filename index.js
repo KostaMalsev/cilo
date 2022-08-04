@@ -9,7 +9,12 @@ const app = express()
 const {dbLib} = require('./db.js')
 
 
-
+let auth = {user: 'me',
+  host: 'localhost',
+  database: 'api',
+  password: 'password',
+  port: 5432};
+  
 const db = new dbLib(auth)
 const port = 3000
 
