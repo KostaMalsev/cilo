@@ -1,10 +1,8 @@
-
 const Pool = require('pg').Pool
 
-export class db{
-  
-  constructor(conn)
-  {
+export class db {
+
+  constructor(conn) {
     this.pool = new Pool(conn);
   }
 }
@@ -20,7 +18,7 @@ const pool = new Pool({
 })
 */
 
-const getUsers = (request, response) => {
+getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error
@@ -28,73 +26,4 @@ const getUsers = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
-
-
-
 }
-
-module.exports = {
-  getUsers
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
