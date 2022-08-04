@@ -1,10 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-
+const dbResource = require('db.js')
 
 class routeAPI {
 
-  constructor(port) {
+  constructor(port,db) {
     this.app = new express();
     let options = {};
     this.server = require('https').createServer(options, app);
@@ -20,9 +20,11 @@ class routeAPI {
     this.server.listen(port, function() {
       logger.writeLog('Listening on port ' + port);
     });
+    
+    this.db = db;
   }
 
-  get(conn) {
+  get() {
     restApp.get('/', (request, response) => {
       response.json({
         info: 'Node.js, Express, and Postgres API'
@@ -30,8 +32,8 @@ class routeAPI {
     });
   }
 
-  getUsers(conn) {
-    restApp.get('/users', conn.getUsers);
+  getUsers() {
+    restApp.get('/users', this.db.getUsers);
   }
   
 };
