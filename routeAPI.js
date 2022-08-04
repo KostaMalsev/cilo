@@ -33,8 +33,8 @@ export class routeAPI {
     });
   }
 
-  getUsers(db) {
-    restApp.get('/users', db.getUsers);
+  getUsers(f) {
+    restApp.get('/users', f);
   }
   
 };
