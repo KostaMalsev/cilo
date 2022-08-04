@@ -11,11 +11,11 @@ export class routeGraph {
     //Additonal setup...    
   }
 
-  get(conn) {
+  get() {
     //some other impl
   }
 
-  getUsers(conn) {
+  getUsers(f) {
     //some other impl
   }
   
