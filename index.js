@@ -23,7 +23,8 @@ const db = new dbLib(auth);
 
 
 
-const restPort = 3000
+const restPort = 3000;
+const graphPort = 3001;
 
 
 restApp.use(bodyParser.json())
@@ -40,19 +41,19 @@ restApp.get('/', (request, response) => {
 restApp.get('/users', db.getUsers)
 
 
-var server = require('https').createServer(options, restApp);
+var restServer = require('https').createServer(options, restApp);
 
-server.listen(port, function() {
+restServer.listen(port, function() {
     logger.writeLog('Listening on port ' + restPort);
 });
 
-var admin_server = require('https').createServer(options, admin_app);
+var graphServer = require('https').createServer(options, graphApp);
 
-admin_server.listen(admin_port, function() {
-    logger.writeLog('Listening on admin port ' + admin_port);
+graphServer.listen(admin_port, function() {
+    logger.writeLog('Listening on graph port ' + graphPort);
 });
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+restServer.listen(port, () => {
+  console.log(`App running on port ${graphPort}.`)
 })
 
