@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 
 const dbLib = require('./db.js')
 
+import {routeGraph} from 'routeGraph.js'
+import {routeRest} from 'routeRest.js'
 
 let auth = {
   user: 'me',
