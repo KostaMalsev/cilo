@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 
 const restApp = express();
 
+const graphApp = express();
+
 
 const dbLib = require('./db.js')
 
@@ -21,31 +23,27 @@ const db = new dbLib(auth);
 
 
 
-const port = 3000
+const restPort = 3000
 
 
-app.use(bodyParser.json())
-app.use(
+restApp.use(bodyParser.json())
+restApp.use(
   bodyParser.urlencoded({
     extended: true,
   })
 )
 
-app.get('/', (request, response) => {
+restApp.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-app.get('/users', db.getUsers)
-app.get('/users/:id', db.getUserById)
-app.post('/users', db.createUser)
-app.put('/users/:id', db.updateUser)
-app.delete('/users/:id', db.deleteUser)
+restApp.get('/users', db.getUsers)
 
 
-var server = require('https').createServer(options, app);
+var server = require('https').createServer(options, restApp);
 
 server.listen(port, function() {
-    logger.writeLog('Listening on port ' + port);
+    logger.writeLog('Listening on port ' + restPort);
 });
 
 var admin_server = require('https').createServer(options, admin_app);
