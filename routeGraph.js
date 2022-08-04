@@ -20,3 +20,5 @@ class routeGraph {
   }
   
 };
+
+module.exports = {routeGraph};
