@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const dbResource = require('db.js')
 
 
 
@@ -24,7 +23,6 @@ class routeAPI {
       logger.writeLog('Listening on port ' + port);
     });
     
-    this.db = db;
   }
 
   get() {
@@ -35,8 +33,8 @@ class routeAPI {
     });
   }
 
-  getUsers() {
-    restApp.get('/users', this.db.getUsers);
+  getUsers(db) {
+    restApp.get('/users', db.getUsers);
   }
   
 };
