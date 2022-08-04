@@ -27,3 +27,5 @@ getUsers = (request, response) => {
   })
 }
 }
+
+module.exports = {db};
