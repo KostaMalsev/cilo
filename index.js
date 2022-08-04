@@ -28,7 +28,14 @@ let rest = routeRest(restPort);
 
 let graph = routeGraph(graphPort);
 
-rest.get(db)
+rest.get()
+
+graph.get();
+
+rest.getUsers(db);
+
+graph.getUsers(db);
+
 
 /*
 restApp.use(bodyParser.json())
