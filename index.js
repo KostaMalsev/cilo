@@ -1,9 +1,5 @@
 //Implementation of express
 
-const express = require('express')
-
-const bodyParser = require('body-parser')
-
 const dbLib = require('./db.js')
 
 routeGraph =  require('routeGraph.js')
