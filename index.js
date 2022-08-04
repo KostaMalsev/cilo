@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-const {dbLib} = require('./db.js')
+const dbLib = require('./db.js')
 
 
 let auth = {
