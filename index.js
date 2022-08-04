@@ -24,11 +24,11 @@ const db = new dbLib(auth);
 const restPort = 3000;
 const graphPort = 3001;
 
-let rest = routeRest(restPort,db);
+let rest = routeRest(restPort);
 
-let graph = routeGraph(graphPort,db);
+let graph = routeGraph(graphPort);
 
-
+rest.get(db)
 
 /*
 restApp.use(bodyParser.json())
