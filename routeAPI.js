@@ -41,3 +41,4 @@ export class routeAPI {
 
 
 
+module.exports = {routeAPI};
