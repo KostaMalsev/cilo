@@ -14,6 +14,7 @@ let auth = {
   password: 'password',
   port: 5432};
   
+  
 const db = new dbLib(auth);
 
 
@@ -21,7 +22,7 @@ const db = new dbLib(auth);
 const restPort = 3000;
 const graphPort = 3001;
 
-
+/*
 restApp.use(bodyParser.json())
 
 restApp.use(
@@ -29,15 +30,7 @@ restApp.use(
     extended: true,
   })
 );
-
-
-
-restApp.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
-})
-
-restApp.get('/users', db.getUsers)
-
+*/
 
 
 
