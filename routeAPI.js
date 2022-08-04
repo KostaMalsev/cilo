@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 
 
 
-class routeAPI {
+export class routeAPI {
 
   constructor(port) {
     this.app = new express();
@@ -38,3 +38,6 @@ class routeAPI {
   }
   
 };
+
+
+
