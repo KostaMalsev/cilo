@@ -4,29 +4,34 @@ const bodyParser = require('body-parser')
 
 class routeAPI {
 
-  constructor(port) 
-  {
+  constructor(port) {
     this.app = new express();
     let options = {};
-    this.restServer = require('https').createServer(options, app);
+    this.server = require('https').createServer(options, app);
 
-    restServer.listen(port, function() {
+    this.app.use(bodyParser.json())
+
+    this.app.use(
+      bodyParser.urlencoded({
+        extended: true,
+      })
+    );
+    
+    this.server.listen(port, function() {
       logger.writeLog('Listening on port ' + port);
     });
-    
   }
-  
-  get(conn)
-  {
+
+  get(conn) {
     restApp.get('/', (request, response) => {
-      response.json({ info: 'Node.js, Express, and Postgres API' })
+      response.json({
+        info: 'Node.js, Express, and Postgres API'
+      })
     });
   }
-  
-  getUsers(conn)
-  {
+
+  getUsers(conn) {
     restApp.get('/users', conn.getUsers);
   }
+  
 };
-
-
