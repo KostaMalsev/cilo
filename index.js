@@ -9,13 +9,14 @@ const app = express()
 const {dbLib} = require('./db.js')
 
 
-let auth = {user: 'me',
+let auth = {
+  user: 'me',
   host: 'localhost',
   database: 'api',
   password: 'password',
   port: 5432};
   
-const db = new dbLib(auth)
+const db = new dbLib(auth);
 const port = 3000
 
 app.use(bodyParser.json())
