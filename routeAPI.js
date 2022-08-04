@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 class routeAPI {
 
-  constructor(port,db) {
+  constructor(port) {
     this.app = new express();
     let options = {};
     this.server = require('https').createServer(options, app);
