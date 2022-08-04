@@ -4,7 +4,8 @@ const express = require('express')
 
 const bodyParser = require('body-parser')
 
-const app = express()
+const restApp = express();
+
 
 const dbLib = require('./db.js')
 
@@ -39,6 +40,19 @@ app.get('/users/:id', db.getUserById)
 app.post('/users', db.createUser)
 app.put('/users/:id', db.updateUser)
 app.delete('/users/:id', db.deleteUser)
+
+
+var server = require('https').createServer(options, app);
+
+server.listen(port, function() {
+    logger.writeLog('Listening on port ' + port);
+});
+
+var admin_server = require('https').createServer(options, admin_app);
+
+admin_server.listen(admin_port, function() {
+    logger.writeLog('Listening on admin port ' + admin_port);
+});
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
