@@ -15,6 +15,18 @@ class routeAPI {
     });
     
   }
+  
+  get(conn)
+  {
+    restApp.get('/', (request, response) => {
+      response.json({ info: 'Node.js, Express, and Postgres API' })
+    });
+  }
+  
+  getUsers(conn)
+  {
+    restApp.get('/users', conn.getUsers);
+  }
 };
 
 
