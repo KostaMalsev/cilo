@@ -53,7 +53,4 @@ graphServer.listen(admin_port, function() {
     logger.writeLog('Listening on graph port ' + graphPort);
 });
 
-restServer.listen(port, () => {
-  console.log(`App running on port ${graphPort}.`)
-})
 
