@@ -1,12 +1,14 @@
 const {routeAPI} = import 'routeAPI.js'
 
 
-class routeRest {
+export class routeRest{
 
   constructor(port) {
       super(port);
   }
 };
+
+module.exports = {routeRest};
 
 
 
