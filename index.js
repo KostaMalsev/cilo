@@ -28,6 +28,7 @@ const graphPort = 3001;
 
 
 restApp.use(bodyParser.json())
+
 restApp.use(
   bodyParser.urlencoded({
     extended: true,
