@@ -32,7 +32,9 @@ restApp.use(
   bodyParser.urlencoded({
     extended: true,
   })
-)
+);
+
+
 
 restApp.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
