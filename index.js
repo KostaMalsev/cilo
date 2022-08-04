@@ -24,9 +24,9 @@ const db = new dbLib(auth);
 const restPort = 3000;
 const graphPort = 3001;
 
-let rest = routeRest(restPort);
+let rest = routeRest(restPort,db);
 
-let graph = routeGraph(graphPort);
+let graph = routeGraph(graphPort,db);
 
 
 
