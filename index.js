@@ -6,8 +6,11 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-const db = require('./db.js')
+const {dbLib} = require('./db.js')
 
+
+
+const db = new dbLib(auth)
 const port = 3000
 
 app.use(bodyParser.json())
